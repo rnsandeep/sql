@@ -1,0 +1,207 @@
+1. Difference between Truncate and Delete?
+   Delete will delete rows and it will allow roll back where as Truncate can delete rows and cols and cannot roll back.
+   Truncate is part of DDL (Data Descriptive Language)
+   Delete is part of DML( Data Manipulative Language)
+   
+2. Subsets of SQL?
+   1. DML : Data Manipulative Language.
+   2. DDL : Data Descriptive Language.
+   3. DCL : Data Control Language.
+   4. TCL : Transaction Control Language.
+
+3. Different Types of DBMS:
+   1. Heirarchical: Predecussor and Successor.
+   2. Relational
+   3. Network
+   4. Object Oriented
+   
+4. Table and Field
+   Table has column names called Fields.
+   
+5. Join in sql.
+    Combine two tables based on common elements. 
+    Inner Join, OUter Join.
+    
+6. Char and varchar2:
+   Char: Fixed length
+   Varchar2: Variable Length.
+   
+7. Primary Key:
+   Uniquely Identify a Table.
+   
+8. What are constraints:
+    Used to limit the data Type of table.
+    Not Null: Null value cannot be stored.
+    Unique: All values are different.
+    Check : Ensures specific condition.
+    Index : Create and retrieve database very quickly.
+    
+9. SQL and MySQL.
+   SQL : language.
+   MYSQL: DBMS. 
+   
+10. Unique key:
+    Identify single row in table.
+    Duplicate values are not allowed.
+    
+11. Foreign Key:
+    References Primary key in the parent table.
+
+12. What do you mean by data integrity.
+    Accuracy and consistency.
+    
+13. What is difference b/w clustered and non-clustered Index.
+    Cluster able to retrieve data are faster than non clustered Index.
+    One table has only one clustered Index and any non-clustere Index.
+    
+14. Write a sql query to display current day.
+    SELECT GETDATE();
+ 
+15. What are different type of joins.
+    1. Inner Join: Matching values in both Tables.
+    2. Full Join: Return all values from both tables.
+    3. Left Join: Return all left and matching from right.
+    4. Right Join: Return all right and matching from left.
+
+16. What do you mean by denormalization.
+    Access data from higher to lower forms of a table.
+    Adds redundant data from different tables.
+ 
+17. Entities and Relationships.
+    Entities are real world objects.
+    Relationships are relationship b/w entities which are usually represented in a table.
+
+18. Index: Performance tuning to get faster retrieval of data from table.
+           Creates entry for each value. 
+
+19. Unique Index, Clustere, non-clustered.
+    Unique: no duplicate values.
+    clustered: reorder physical order of table. Only one clustered Index.
+    non-clustured: any number of non-clsutred.
+    
+20. Normalization: Avoid duplication and redundancy. more tables with smaller rows. easier security . MOre compact and consistent.
+
+21. Drop and Truncate: Drop removes table and cannot be rolled back.
+     Truncate removes all rows from table and can be rolled back.
+
+22. Normalization Types:
+    1. 1NF : each table cell should have only one value. All records must be unique.
+    2. 2NF : Divide table into two tables. table should have single column primary key and should be 1NF.
+    3. 3NF : must be 2NF. Not have any transitive functional dependency.
+    4. BCNF: must be 3NF. must have only one candidate key present in table.
+    
+23. ACID properties.
+     Atomicity: Transactions completed Either completely done or failed.
+     Consistency: Must meet validation rules. 
+     Isolation: concurrency control.
+     Durability: Transaction to be done no matter what.
+ 
+24. Trigger:
+     Execute something when an insertor update  or delete happens. 
+
+25. Types of Operators in SQL:
+    Arithmetic, Bitwise, Logical, Compound, Comparison.
+   
+26. NULL is zero or blank space? :
+    No, NULL is unavailable and not applicable. 
+    
+27. Cross Join: Produces the cross product.
+    Natural Join: having same name and data type.
+    
+28. Sub query : Always executed first and passed to main query.
+     Any errors in sub query will be full error.
+ 
+29. Correlated sub query and Non correlated sub query.
+  
+30. Count no of records in table.
+    SELECT * from TABLE1;
+    SELECT COUNT(*) from TABLE2;
+ 
+31. Write a query to display employee name which start with A.
+    SELECT * FROM TABLE_NAME WHERE EMPLOYEE_NAME like 'A%'
+ 
+32. SQL query of third highest salary of employee .
+    SELECT TOP 1 salary (SELECT TOP 3 salary FROM EMPLOYEE_TABLE ORDER BY SALARY DESC) as emp ORDER BY ASC;
+    
+33. GROUP functions.
+    AVG, COUNT, MAX, MIN, SUM, VARIANCE.
+    
+34. Relationship and different types of relationships.
+    one-to-one, one-to-many, many-to-one.
+    
+35. INSERT NULL VALUES while inserting data.
+    EXPLLICIT put NULL Values.
+    or vomit col value from col list.
+ 
+36. BETWEEN and IN:
+    BETWEEN check between values.
+    IN check if they are in values.
+    
+37. SQL to modify, insert, calculate .
+
+38. MERGE: conditional update or insertion into a table.
+
+39. Recursive stored procedure: similar to recursion until boundary coundtion.
+
+40. SQL CLAUSE: HAVING OR WHERE:
+     restricts data by  having condition.
+     
+41. HAVING and WHERE:
+ 
+42: DYNAMIC SQL: 
+
+43: CONSTRAINTS: column level and tabel level.
+
+44. INTERSECT: 
+    QUERY1 INTERSECT QUERY2
+    
+45. STRING CASE manipulation:
+    LOWER, UPPER, INITCAP.
+
+46. OPERATORS DIFFERENT SET,
+    UNION : combine 
+    INTERSECT: intersection.
+    MINUS: 
+
+47. ALIAS command:
+    identify a particular table or column
+    
+48. AGGREGATE: MAX, COUNT
+    SCALAR : UCASE(), NOW()
+    
+49. PATTERN MATCHING:
+    like ex: like 'A%' .. students with starting name A.
+
+50. UNIQUE RECORDS:
+     DISTINCT key word.
+     
+51. fetch five characters or string:
+     SUBSTRING(), RIGHT()
+     
+52. SQL and PL/SQL.
+    PL/SQL : loops and procedures.
+    
+53. VIEW:
+    Virtual table.
+    Restricting data.
+
+54. STORED procedure. several sql combined 
+    
+55. ADV/ DISADV of stored procedures.
+    MODULAR - ADV.
+    FASTER, SECURITY.
+    DISADV: only in DATABASE AND MORE MEMORY.
+    
+ 56. USER defined functions: 
+     SCALAR
+ 
+ 57 LOCAL and GLOBAL VARIABLES:
+ 
+ 58. AUTO INCREMENT SQL; increment whenever new record.
+ 
+ 59. DATA WAREHOUSE: MULTIPLE SOURCES of info.
+ 
+ 60. AUTHENTIC MODES: WINDOWS, MIXED.
+ 
+ 61. STUFF and REPLACE; 
+ 
