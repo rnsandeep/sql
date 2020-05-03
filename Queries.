@@ -1,0 +1,81 @@
+1. DEFAULT constraint:
+create table student(sid int, sname varchar(20), smarks int default 50)
+
+insert into student(sid, sname) values(1, 'sam')
+insert into student(sid, sname) values(2, 'mat')
+
+select * from student 
+Output: 1 sam 50
+
+2. UNIQUE constraint:
+create table student(sid int unique, sname varchar(20))
+cannot insert duplicate values for sid. 
+
+3. FInd the second highest salary from the table.
+
+select max(e_salary) from employee where e_salary not in (select max(e_salary) from employee)
+
+4. Normalization and Denormalization
+
+Normalization : reduce redundancy and inconsistency. Organizing Fields in database.
+Denormalization: Create redundancy to increase speed of query by grouping. 
+
+5. select e_gender, avg(e_age) from employee where avg(e_age) > 30 group by gender ; instead we should use
+   select e_gender, avg(e_age) from employee group by e_gender having avg(e_age) > 30; 
+
+6. STUFF( string1, position, length, string2)
+   SANDEEP, 2, 6, IRISHA  -> SIRISHA
+   
+7. VIEW in sql. virtual tables 
+   create view female_employee as select * from employee where e_gender='female'
+   create view age as select * from employee where e_age > 25
+
+8. stored procedure is a prepared sql code which can be saved and reused.
+   create procedure employee_age 
+   as
+   select e_age from employee 
+   go
+   
+   exec employee_age
+   
+9. JOINS: INNER, OUTER, LEFT, RIGHT.
+   INNER: matching in both. 
+   select columns from table1 INNER JOIN table2 ON table1.column1=table2.column2
+   select employee.e_name, employee.e_dept, department.d_name, department.d_location 
+   from employee 
+   inner join department on 
+   employee.e_dept=department.d_name
+   
+10. Temporary table. after session it will be terminated.
+    create table #book(b_id int, b_cost int)
+    insert into #book(1, 100)
+    select * from #book
+    
+11. OLTP, OLAP. 
+    ONLINE TRANSACTION PROCESSING
+    ONLINE ANALYTICAL PROCESSING ( low frequency and too complex involving aggregation- data mining).
+    
+12. DELETE and TRUNCATE:
+    DELETE one or more existing tables.
+    delete from student where sid=3 - DML command.
+    truncate table student - DDL command 
+    if table has foreign key we can't truncate.
+    
+13. UNION and UNION_ALL operator.
+    A U B.
+ 
+14. select * from student_details1 
+    union
+    select * from student_details2
+
+15. copy data from one table into another table.
+    create table employee_duplicate(
+    eid int,
+    ename varchar(20),
+    esalary int,
+    eage int,
+    egender varchar(20)
+    )
+    select * from employee_duplicate
+    insert into employee_duplicate select * from employee
+    -> copied from employee into employee_duplicate.
